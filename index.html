@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Galvanize Personnel</title>
-    </head>
-    <body>
-        
-    </body>
+  <head>
+      <meta charset="utf-8">
+      <title>Galvanize Personnel</title>
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" media="screen" title="no title" charset="utf-8">
+      <link rel="stylesheet" href="assets/styles/main.css">
+  </head>
+  <body>
+    <header>
+      <h1>Galvanize Personnel</h1>
+    </header>
+
+    <form id="form">
+      <label for="fname">First Name</label>
+      <input type="text" placeholder="First" id="fname">
+
+      <label for="lname">Last Name</label>
+      <input type="text" placeholder="Last" id="lname">
+
+      <label for="role">Role</label>
+      <select name="role" id="role">
+        <option value="" disabled selected>Select your option</option>
+
+      </select>
+      <img id="image" src="http://placehold.it/350x350">    <!-- should this go outside the form? -->
+      <input type="submit" id="button" name="save" value="Save">
+    </form>
+  <div id="status-msg">
+    <p class="save-status"></p>
+  </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="assets/scripts/app.js"></script>
+  </body>
 </html>
