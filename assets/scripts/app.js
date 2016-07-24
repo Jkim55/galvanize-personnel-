@@ -34,6 +34,6 @@ $("#button").click(function(event){
       console.error(error["status"]);
       $(".save-status").hide().text("Not quite").fadeIn(500).delay(2000).fadeOut(500)
     },
-    success:$(".save-status").hide().text("Success").fadeIn(500).delay(2000).fadeOut(500)
+    success:$(".save-status").hide().text("Success!").fadeIn(500).delay(2000).fadeOut(500)
   })
 })

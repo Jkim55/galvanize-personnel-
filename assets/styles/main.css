@@ -57,3 +57,9 @@ img {
   height: 350px;
   padding-top: 50px;
 }
+
+.save-status{
+  font-size: 20px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
