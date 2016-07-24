@@ -1,4 +1,5 @@
 
+// $(document).ready(function(){  // not req since js scripts are at the end
   $.ajax({
     url: "http://galvanize-student-apis.herokuapp.com/gpersonnel/roles",
     type: 'GET',
@@ -12,7 +13,7 @@
         }
     })
   })
-
+// })
 $("#role").change(function() {
   $("#image").attr("src", $("#role").val())
 })
@@ -28,10 +29,10 @@ $("#button").click(function(event){
     type: 'POST',
     url:'http://galvanize-student-apis.herokuapp.com/gpersonnel/users',
     data: userData,
-    error: function(err){
-      console.error(err);
-      $(".save-status").text("Success")
+    error: function(error){
+      console.error(error["status"]);
+      $(".save-status").hide().text("Not quite").fadeIn(500).delay(2000).fadeOut(500)
     },
-    success:$(".save-status").text("Success").fadeIn(500).delay(2000).fadeOut(500)
+    success:$(".save-status").hide().text("Success").fadeIn(500).delay(2000).fadeOut(500)
   })
 })
