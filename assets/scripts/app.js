@@ -3,7 +3,8 @@
   $.ajax({
     url: "http://galvanize-student-apis.herokuapp.com/gpersonnel/roles",
     type: 'GET',
-    error: function(err){console.error(err)}, // log in red
+    error: function(error){
+      console.error(error["statusText"])}, // log error
     success: (function(data) {
       for(obj of data) {
         var newOption = $("<option>");

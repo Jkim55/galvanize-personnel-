@@ -1,4 +1,3 @@
-/* add some styles */
 #wrapper {
   max-width: 390px;
   background-color: white;
@@ -22,6 +21,10 @@ div .formElement{
 }
 div .formElement *{
   display:block;
+}
+
+div .formElement>label {
+  padding-bottom: 4px;
 }
 
 input, select{
