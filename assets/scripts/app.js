@@ -6,7 +6,7 @@
     error: function(error){
       console.error(error["statusText"])}, // log error
     success: (function(data) {
-      for(obj of data) {
+      for(var obj of data) {
         var newOption = $("<option>");
         newOption.attr("value", obj["img"]);
         newOption.text(obj["title"])
@@ -15,6 +15,8 @@
     })
   })
 // })
+
+
 $("#role").change(function() {
   $("#image").attr("src", $("#role").val())
 })
