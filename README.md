@@ -1,6 +1,6 @@
 # Galvanize Personnel
 
-## Deployed Site: https://galvanize-personnel-37d7e.firebaseapp.com/   <--- DOES NOT WORK, links are breaking. Don't know why.
+## Deployed Site: https://g-personnel.firebaseapp.com   <--- DOES NOT WORK, links are breaking. Don't know why.
 
 
 You are making an app for your new company that assigns roles to employees. You'll need to:
