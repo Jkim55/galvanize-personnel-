@@ -1,7 +1,7 @@
 
 // $(document).ready(function(){  // not req since js scripts are at the end
   $.ajax({
-    url: "http://galvanize-student-apis.herokuapp.com/gpersonnel/roles",
+    url: "https://galvanize-student-apis.herokuapp.com/gpersonnel/roles",
     type: 'GET',
     error: function(error){
       console.error(error["statusText"])}, // log error
@@ -30,7 +30,7 @@ $("#button").click(function(event){
   }
   $.ajax({
     type: 'POST',
-    url:'http://galvanize-student-apis.herokuapp.com/gpersonnel/users',
+    url:'https://galvanize-student-apis.herokuapp.com/gpersonnel/users',
     data: userData,
     error: function(error){
       console.error(error["status"]);
