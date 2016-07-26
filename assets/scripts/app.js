@@ -11,7 +11,7 @@
         newOption.attr("value", obj["img"]);
         newOption.text(obj["title"])
         $("#role").append(newOption);
-        }
+      }
     })
   })
 // })
@@ -36,6 +36,8 @@ $("#button").click(function(event){
       console.error(error["status"]);
       $(".save-status").text("Not quite").fadeIn(500).delay(2000).fadeOut(500)
     },
-    success:$(".save-status").text("Success!").fadeIn(500).delay(2000).fadeOut(500)
+    success: function(){
+      $(".save-status").text("Success!").fadeIn(500).delay(2000).fadeOut(500)
+    }
   })
 })
