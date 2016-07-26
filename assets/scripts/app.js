@@ -1,13 +1,12 @@
-
 // $(document).ready(function(){  // not req since js scripts are at the end
   $.ajax({
     url: "https://galvanize-student-apis.herokuapp.com/gpersonnel/roles",
     type: 'GET',
-    error: function(error){
+    error:(error)=>{
       console.error(error["statusText"])}, // log error
-    success: (function(data) {
-      for(var obj of data) {
-        var newOption = $("<option>");
+    success: ((data)=>{
+      for(let obj of data) {
+        let newOption = $("<option>");
         newOption.attr("value", obj["img"]);
         newOption.text(obj["title"])
         $("#role").append(newOption);
@@ -17,13 +16,13 @@
 // })
 
 
-$("#role").change(function() {
+$("#role").change(()=>{
   $("#image").attr("src", $("#role").val())
 })
 
-$("#button").click(function(event){
+$("#button").click((event)=>{
   event.preventDefault()
-  var userData={
+  let userData={
     firstName: $("#fname").val(),
     lastName: $("#lname").val(),
     role: $("#role option:selected").text()
@@ -32,12 +31,14 @@ $("#button").click(function(event){
     type: 'POST',
     url:'https://galvanize-student-apis.herokuapp.com/gpersonnel/users',
     data: userData,
-    error: function(error){
-      console.error(error["status"]);
-      $(".save-status").text("Not quite").fadeIn(500).delay(2000).fadeOut(500)
+    error: (error)=>{
+      let messageObj = JSON.parse(error['responseText'])
+      console.error(messageObj['message']);
+      $(".save-status").text(error['responseText']['message']).fadeIn(500).delay(2000).fadeOut(500)
     },
-    success: function(){
-      $(".save-status").text("Success!").fadeIn(500).delay(2000).fadeOut(500)
+    success:(data)=>{
+      console.log(data['message'])
+      $(".save-status").text(data['message']).fadeIn(500).delay(2000).fadeOut(500)
     }
   })
 })
